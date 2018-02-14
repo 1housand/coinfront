@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import { Timeline, Follow, Hashtag, Mention, Share } from 'react-twitter-widgets'
+import { Timeline } from 'react-twitter-widgets'
+import Chart from './Chart';
+import { getData } from "./utils"
+import { TypeChooser } from "react-stockcharts/lib/helper";
+
 import Header from './components/Header';
 import './App.css';
 import _ from 'lodash';
-import { Line, Chart } from 'react-chartjs-2';
+// import { Line, Chart } from 'react-chartjs-2';
 import moment from 'moment';
-import currencies from './supported-currencies.json';
+import coins from './supported-coins.json';
 
-console.log(currencies)
+console.log(coins)
 
-const REALTIME_BITCOIN_URL = "https://api.coindesk.com/v1/bpi/currentprice.json"
+const REALTIME_BINANCE_URL = "https://api.binance.com"
 
 class App extends Component {
   constructor (props) {
@@ -19,8 +23,8 @@ class App extends Component {
     Chart.defaults.global.defaultFontColor = '#000';
     Chart.defaults.global.defaultFontSize = 16;
 
-    this.state = {historicalData: null, currency: "PHP"}
-    this.onCurrencySelect = this.onCurrencySelect.bind(this)
+    this.state = {historicalData: null, coin: "PHP", currency: "PHP"}
+    this.onCoinSelect = this.onCoinSelect.bind(this)
   }
 
   componentDidMount () {
@@ -28,8 +32,28 @@ class App extends Component {
   }
 
   getBitcoinData () {
-    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?currency=${this.state.currency}`)
+    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?currency=${this.state.coin}`)
       .then(response => response.json())
+      .then(historicalData => this.setState({historicalData}))
+      .catch(e => e)
+  }
+
+  getCoinData () {
+    fetch(REALTIME_BINANCE_URL+'/api/v1/klines?symbol=QTUMBTC&interval=1h')
+    // fetch('https://api.binance.com/api/v3/ticker/price', 
+    // {
+    //   method: 'GET',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   mode: 'no-cors',
+    //   body: JSON.stringify({
+    //     symbol: 'QTUMBTC'
+    //   })
+    // })
+      // .then(response => console.log(response.json()))
+      // .then(response => response.json())
       .then(historicalData => this.setState({historicalData}))
       .catch(e => e)
   }
@@ -41,7 +65,7 @@ class App extends Component {
       labels: _.map(_.keys(bpi), date => moment(date).format("ll")),
       datasets: [
         {
-          label: "Bitcoin",
+          label: this.state.coin,
           fill: true,
           lineTension: 0.1,
           backgroundColor: 'rgba(75,192,192,0.4)',
@@ -65,12 +89,15 @@ class App extends Component {
     }
   }
 
-  setCurrency (currency) {
-    this.setState({currency}, this.getBitcoinData)
+  setCoin (coin) {
+    if (coin == "QTUM")
+      this.setState({coin}, this.getCoinData)
+    else
+      this.setState({coin}, this.getBitcoinData)
   }
 
-  onCurrencySelect (e) {
-    this.setCurrency(e.target.value)
+  onCoinSelect (e) {
+    this.setCoin(e.target.value)
   }
 
 
@@ -79,24 +106,29 @@ class App extends Component {
     if (this.state.historicalData) {
       return (
         <div className="app">
-          <Header title="BITCOIN PRICE INDEX" />
+          <Header title="QTUM PRICE INDEX" />
 
           <div className="select-container">
-            <span style={{fontSize: 18, fontFamily: 'Bungee'}}> Select your currency: </span>
-            <select value={this.state.currency} onChange={this.onCurrencySelect}>
-              {currencies.map((obj, index) =>
-                <option key={`${index}-${obj.country}`} value={obj.currency}> {obj.currency} </option>
+            <span style={{fontSize: 18, fontFamily: 'Bungee'}}> Select your coin: </span>
+            <select value={this.state.coin} onChange={this.onCoinSelect}>
+              {coins.map((obj, index) =>
+                <option key={`${index}-${obj.country}`} value={obj.coin}> {obj.coin} </option>
               )}
+              {/* <option value="PHP">PHP</option>
+              <option value="QTUM">QTUM</option> */}
             </select>
             {
-              this.state.currency !== 'PHP' && (<div>
-                <a href="#" className="link" onClick={() => this.setCurrency('PHP')} style={{color: "black", fontSize: 16, fontFamily: 'Bungee'}}> [CLICK HERE TO RESET] </a>
+              this.state.coin !== 'PHP' && (<div>
+                <a href="#" className="link" onClick={() => this.setCoin('PHP')} style={{color: "black", fontSize: 16, fontFamily: 'Bungee'}}> [CLICK HERE TO RESET] </a>
               </div>)
             }
           </div>
 
           <div style={{marginTop: 10}}>
-            <Line data={this.formatChartData()} height={250} />
+            {/* <Line data={this.formatChartData()} height={250} /> */}
+            <TypeChooser>
+				      {type => <Chart type={type} data={this.state.data} />}
+			      </TypeChooser>
           </div>
 
           <div style={{marginTop: 10}}>

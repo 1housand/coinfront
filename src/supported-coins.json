@@ -1,0 +1,226 @@
+[
+    {
+        "coin": "QTUM",
+        "country": ""
+    },
+    {
+        "coin": "ALL",
+        "country": "Albanian Lek"
+    },
+    {
+        "coin": "PHP",
+        "country": "Philippine Peso"
+    },
+    {
+        "coin": "PKR",
+        "country": "Pakistani Rupee"
+    },
+    {
+        "coin": "PLN",
+        "country": "Polish Zloty"
+    },
+    {
+        "coin": "PYG",
+        "country": "Paraguayan Guarani"
+    },
+    {
+        "coin": "QAR",
+        "country": "Qatari Rial"
+    },
+    {
+        "coin": "RON",
+        "country": "Romanian Leu"
+    },
+    {
+        "coin": "RSD",
+        "country": "Serbian Dinar"
+    },
+    {
+        "coin": "RUB",
+        "country": "Russian Ruble"
+    },
+    {
+        "coin": "RWF",
+        "country": "Rwandan Franc"
+    },
+    {
+        "coin": "SAR",
+        "country": "Saudi Riyal"
+    },
+    {
+        "coin": "SBD",
+        "country": "Solomon Islands Dollar"
+    },
+    {
+        "coin": "SCR",
+        "country": "Seychellois Rupee"
+    },
+    {
+        "coin": "SDG",
+        "country": "Sudanese Pound"
+    },
+    {
+        "coin": "SEK",
+        "country": "Swedish Krona"
+    },
+    {
+        "coin": "SGD",
+        "country": "Singapore Dollar"
+    },
+    {
+        "coin": "SHP",
+        "country": "Saint Helena Pound"
+    },
+    {
+        "coin": "SLL",
+        "country": "Sierra Leonean Leone"
+    },
+    {
+        "coin": "SOS",
+        "country": "Somali Shilling"
+    },
+    {
+        "coin": "SRD",
+        "country": "Surinamese Dollar"
+    },
+    {
+        "coin": "STD",
+        "country": "S\u00e3o Tom\u00e9 and Pr\u00edncipe Dobra"
+    },
+    {
+        "coin": "SVC",
+        "country": "Salvadoran Col\u00f3n"
+    },
+    {
+        "coin": "SYP",
+        "country": "Syrian Pound"
+    },
+    {
+        "coin": "SZL",
+        "country": "Swazi Lilangeni"
+    },
+    {
+        "coin": "THB",
+        "country": "Thai Baht"
+    },
+    {
+        "coin": "TJS",
+        "country": "Tajikistani Somoni"
+    },
+    {
+        "coin": "TMT",
+        "country": "Turkmenistani Manat"
+    },
+    {
+        "coin": "TND",
+        "country": "Tunisian Dinar"
+    },
+    {
+        "coin": "TOP",
+        "country": "Tongan Pa?anga"
+    },
+    {
+        "coin": "TRY",
+        "country": "Turkish Lira"
+    },
+    {
+        "coin": "TTD",
+        "country": "Trinidad and Tobago Dollar"
+    },
+    {
+        "coin": "TWD",
+        "country": "New Taiwan Dollar"
+    },
+    {
+        "coin": "TZS",
+        "country": "Tanzanian Shilling"
+    },
+    {
+        "coin": "UAH",
+        "country": "Ukrainian Hryvnia"
+    },
+    {
+        "coin": "UGX",
+        "country": "Ugandan Shilling"
+    },
+    {
+        "coin": "USD",
+        "country": "United States Dollar"
+    },
+    {
+        "coin": "UYU",
+        "country": "Uruguayan Peso"
+    },
+    {
+        "coin": "UZS",
+        "country": "Uzbekistan Som"
+    },
+    {
+        "coin": "VEF",
+        "country": "Venezuelan Bol\u00edvar Fuerte"
+    },
+    {
+        "coin": "VND",
+        "country": "Vietnamese Dong"
+    },
+    {
+        "coin": "VUV",
+        "country": "Vanuatu Vatu"
+    },
+    {
+        "coin": "WST",
+        "country": "Samoan Tala"
+    },
+    {
+        "coin": "XAF",
+        "country": "CFA Franc BEAC"
+    },
+    {
+        "coin": "XAG",
+        "country": "Silver (troy ounce)"
+    },
+    {
+        "coin": "XAU",
+        "country": "Gold (troy ounce)"
+    },
+    {
+        "coin": "XBT",
+        "country": "Bitcoin"
+    },
+    {
+        "coin": "XCD",
+        "country": "East Caribbean Dollar"
+    },
+    {
+        "coin": "XDR",
+        "country": "Special Drawing Rights"
+    },
+    {
+        "coin": "XOF",
+        "country": "CFA Franc BCEAO"
+    },
+    {
+        "coin": "XPF",
+        "country": "CFP Franc"
+    },
+    {
+        "coin": "YER",
+        "country": "Yemeni Rial"
+    },
+    {
+        "coin": "ZAR",
+        "country": "South African Rand"
+    },
+    {
+        "coin": "ZMK",
+        "country": "Zambian Kwacha (pre-2013)"
+    },
+    {
+        "coin": "ZMW",
+        "country": "Zambian Kwacha"
+    },
+    {
+        "coin": "ZWL",
+        "country": "Zimbabwean Dollar"
+    }
+]
